@@ -135,12 +135,7 @@ for i in range(1):
         for i, item in enumerate(tstLoader):
             test_data, test_label = item
             test_data = test_data.long().cuda()
-            pre,gene1_feature1,gene1_feature2 = model.predict(HSL, HSLT, HF, gene1_feat, gene2_feat, test_data)
-
-            # 保存向量
-            # embed = torch.cat((gene1_feature1,gene1_feature2),1).detach().cpu()
-            # a = {'test_label': test_label.numpy().reshape(-1,1), 'embed': embed.numpy()}
-            # np.save('E:/ling/体系二/data/embed', a)
+            pre,gene1_feature,gene1_feature = model.predict(HSL, HSLT, HF, gene1_feat, gene2_feat, test_data)
 
             # 进行参数评估
             pre = pre.detach().cpu()
