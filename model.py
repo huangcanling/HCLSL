@@ -94,7 +94,7 @@ class Model(nn.Module):
         pre = self.classifierLayer(gene1_feature, gene2_feature)
         pre = pre.reshape(-1)
 
-        return pre,gene1_feature1,gene1_feature2
+        return pre,gene1_feature,gene2_feature
 
 
 class ClassifierLayer(nn.Module):
